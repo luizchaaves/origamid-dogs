@@ -3,13 +3,13 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Home from './Components/Home';
-import Login from './Components/Login/Login';
 import User from './Components/User/User';
+import Login from './Components/Login/Login';
 import Photo from './Components/Photo/Photo';
+import NotFound from './Components/NotFound';
 import UserProfile from './Components/User/UserProfile';
 import ProtectedRoute from './Components/Helper/ProtectedRoute';
 import { UserStorage } from './UserContext';
-
 import './App.css';
 
 function App() {
@@ -31,6 +31,7 @@ function App() {
             />
             <Route path="foto/:id" element={<Photo />} />
             <Route path="perfil/:user" element={<UserProfile />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </UserStorage>
