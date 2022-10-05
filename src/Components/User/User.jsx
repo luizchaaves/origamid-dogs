@@ -6,12 +6,14 @@ import UserStats from './UserStats';
 import Feed from '../Feed/Feed';
 import NotFound from '../NotFound';
 import { UserContext } from '../../UserContext';
+import Head from '../Helper/Head';
 
 const User = () => {
   const { data } = React.useContext(UserContext);
 
   return (
     <section className="container">
+      <Head title="Minha conta" />
       <UseHeader />
       <Routes>
         <Route path="/" element={<Feed user={data.id} />} />
